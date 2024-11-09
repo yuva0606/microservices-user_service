@@ -56,11 +56,4 @@ public class UserService {
         user.setEmail(email);
         userRepo.save(user);
     }
-
-    public String updateRole(String username) {
-        User user = userRepo.findByUsername(username).get();
-        user.setRole(Role.ADMIN);
-        userRepo.save(user);
-        return "Role updated successfully";
-    }
 }
