@@ -34,4 +34,9 @@ public class UserController {
         userService.updateEmail(email, httpServletRequest);
         return ResponseEntity.status(HttpStatus.OK).body("Email updated successfully");
     }
+
+    @PutMapping("/update/secret/role")
+    public ResponseEntity<?> updateRoleHandler(@RequestParam String username){
+        return ResponseEntity.status(HttpStatus.OK).body(userService.updateRole(username));
+    }
 }
