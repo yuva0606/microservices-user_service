@@ -55,3 +55,4 @@ jobs:
       - name: Deploy to AKS
         run: |
           kubectl apply -f k8/app.yml
+          kubectl apply -f k8/db.yml
