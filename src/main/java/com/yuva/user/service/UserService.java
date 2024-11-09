@@ -56,4 +56,15 @@ public class UserService {
         user.setEmail(email);
         userRepo.save(user);
     }
+
+    public String updateRole(HttpServletRequest httpServletRequest) {
+        String authHeader = httpServletRequest.getHeader("Authorization");
+        String token = authHeader.substring(7);
+        String userName = jwtService.extractUserName(token);
+
+        User user = userRepo.findByUsername(userName).get();
+        user.setRole(Role.ADMIN);
+        userRepo.save(user);
+        return "Role updated successfully";
+    }
 }
