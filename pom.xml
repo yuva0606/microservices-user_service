@@ -103,6 +103,17 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<image>
+						<name>docker.io/yuva0606/${project.artifactId}</name>
+						<publish>true</publish>
+					</image>
+					<docker>
+						<publishRegistry>
+							<username>yuva0606</username>
+							<password>${env.DOCKER_PWD}</password>
+						</publishRegistry>
+					</docker>
+
 				</configuration>
 			</plugin>
 		</plugins>
